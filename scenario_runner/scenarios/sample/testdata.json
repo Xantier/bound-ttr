@@ -1,0 +1,30 @@
+{
+  "setup": "dbSetup.sql",
+  "tearDown": "dbTearDown.sql",
+  "testCases": [
+    {
+      "tags": [
+        "nightly"
+      ],
+      "name": "Test1",
+      "variables": {
+        "account_from": "1",
+        "account_to": "2",
+        "transfer_amount": "42"
+      },
+      "assertions": {
+        "first_transfer_status": false,
+        "second_transfer_status": true
+      },
+      "db": [
+        {
+          "variables": {
+            "accountId": 1
+          },
+          "query": "dbQuery.sql",
+          "results": "dbExpected.csv"
+        }
+      ]
+    }
+  ]
+}

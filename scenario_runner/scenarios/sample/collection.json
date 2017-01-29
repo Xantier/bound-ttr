@@ -1,0 +1,172 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Sample Collection",
+		"_postman_id": "7de97645-840e-0925-2e81-3ae365bfd82e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create first account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"should be successful\"] = jsonData.success === true;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/account/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Test account\",\"address\":\"123 Main Street\",\"phoneNumber\":\"+353 971231234\",\"balance\":\"34\"}"
+				},
+				"description": "A test case to check against account creation success"
+			},
+			"response": []
+		},
+		{
+			"name": "Create second account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"should be successful\"] = jsonData.success === true;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/account/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Test account2\",\"address\":\"123 Main Street\",\"phoneNumber\":\"+353 97987654321\",\"balance\":\"2.00\"}"
+				},
+				"description": "A test case to check against account creation success"
+			},
+			"response": []
+		},
+		{
+			"name": "Try transfer non-existent money from one account to another",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(responseBody);",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"success status should be \" + postman.getEnvironmentVariable('first_transfer_status')] = jsonData.success === false;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/account/transfer",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\":{{transfer_amount}},\n\t\"accountFromId\":{{account_from}}, \n\t\"accountToId\":{{account_to}}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Lodge money to account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"should be successful\"] = jsonData.success === true;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/account/lodge",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\":\"42\",\"accountId\":\"1\"}"
+				},
+				"description": "A test case to check against account creation success"
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer money successfully from one account to another",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"success status should be \" + postman.getEnvironmentVariable('second_transfer_status')] = jsonData.success ===  true;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/account/transfer",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\":{{transfer_amount}},\n\t\"accountFromId\":{{account_from}}, \n\t\"accountToId\":{{account_to}}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

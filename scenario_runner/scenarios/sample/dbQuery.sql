@@ -1,0 +1,1 @@
+SELECT address,balance,name,phonenumber FROM ACCOUNT;

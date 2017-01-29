@@ -1,0 +1,14 @@
+Setting Up.
+Set up
+running a collection...
+collection run completed.
+Excpected: 123 Main Street,34.00,Test account,+353 971231234
+Result: 123 Main Street,34.00,Test account,+353 971231234
+DB query assertion successful for row 0
+Excpected: 123 Main Street,44.00,Test account2,+353 97987654321
+Result: 123 Main Street,44.00,Test account2,+353 97987654321
+DB query assertion successful for row 1
+All testcases executed successfully for scenario scenarios/sample
+Tearing down
+Torn Down
+Writing JUnit Test report

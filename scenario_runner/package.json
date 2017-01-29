@@ -1,0 +1,22 @@
+{
+  "description": "Automated functional testing with Postman collections and Newman",
+  "repository": {
+    "git": "http"
+  },
+  "license": "SEE LICENSE IN package.json",
+  "README": "README.md",
+  "name": "postman-collection-functional-testing",
+  "scripts": {
+    "start": "node testRunner.js --silent"
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "json5": "^0.5.0",
+    "junit-report-builder": "^1.1.1",
+    "minimist": "^1.2.0",
+    "newman": "^3.4.2",
+    "node-dir": "^0.1.12",
+    "pg-promise": "^5.5.4"
+  }
+}

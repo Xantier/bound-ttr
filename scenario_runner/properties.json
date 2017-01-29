@@ -1,0 +1,9 @@
+{
+  "db": {
+    "user": "postgres",
+    "password": "postgres",
+    "database": "bank-app",
+    "host": "localhost",
+    "port": 5432
+  }
+}
