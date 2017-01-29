@@ -1,11 +1,11 @@
 {
   "description": "Automated functional testing with Postman collections and Newman",
   "repository": {
-    "git": "http"
+    "git": "https://github.com/Xantier/bound-ttr"
   },
-  "license": "SEE LICENSE IN package.json",
+  "license": "MIT",
   "README": "README.md",
-  "name": "postman-collection-functional-testing",
+  "name": "bound-ttr",
   "scripts": {
     "start": "node testRunner.js --silent"
   },
