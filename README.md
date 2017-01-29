@@ -1,4 +1,4 @@
-# Automated postman tests and database query assertions.
+# Automated postman tests and database query assertions
 
 This repository is a boundary testing framework based on Postman collections. It achieves a full boundary testing scenario where you can automatically test your application frontend and assert that correct values are inserted into the database. The current oslution uses Postman's Newman collection runner and a simple CSV file matching to achieve its results. 
 The boundary testing framework exports results in JUnit format and therefore can be simply plugged in to a Jenkins instance or other CI tool for automated continuous integration functional testing. You can create multiple test scenarios that can contain multiple test cases. These test cases can be labeled with tags to achieve different runs for different test needs. 
