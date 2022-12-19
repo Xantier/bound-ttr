@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bound-ttr
+  description: A library to create API to DB end to end tests
+  title: Bound TTR
+  annotations:
+    sonarqube.org/project-key: "bound-ttr/Xantier_bound-ttr_AYUpe8_-v53ao4Dh2nXz"
+    github.com/project-slug: Xantier/bound-ttr
+spec:
+  type: library
+  lifecycle: production
+  owner: Xantier
